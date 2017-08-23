@@ -12,6 +12,7 @@ The purpose of the MAC MIS is to manage MAC students’ records, from registrati
           •	Dynamic Search and Reporting
           •	Data visualization
 
-Skill: PHP/MySQL 
+Skill: Python
        HTML, CSS, JavaScript
-       Laravel and AngularJS
+       Django
+       Bootstrap
