@@ -1,0 +1,14 @@
+{% extends 'myapps/base.html' %}
+
+{% load render_table from django_tables2 %}
+{% load static %}
+
+
+{% block body_block %}
+ <div>
+        <table class="table table-bordered">
+            {% render_table table %}
+        </table>
+
+    </div>
+{% endblock %}

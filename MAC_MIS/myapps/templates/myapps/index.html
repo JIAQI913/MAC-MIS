@@ -1,0 +1,25 @@
+{% extends 'myapps/base.html' %}
+{% load static %}
+
+{% block head_block %}
+    <link rel="stylesheet" type="text/css" href="{% static 'myapps/index.css' %}">
+{% endblock %}
+{% block body_block %}
+<div class="container">
+    <div class="blog-header">
+        <h2>MAC - Course Based Master's</h2>
+    </div>
+    <div class="col-sm-8 blog-main">
+        <p>The Master of Applied Computing is a course-based professional graduate program offered by the School of Computer Science will provide you with a solid foundation and knowledge of industry oriented practical aspects of Computer Science, preparing you to take up positions in the growing software industry in Canada and around the world.</p>
+        <p>The skills and knowledge gained from this program will allow you to develop a successful career in the growing software industry through practical projects, internships and in-class training. This program has been specifically designed to expose you to the latest technologies and developments in a number of high-demand fields.</p>
+        <p>You will study and live in Canada for approximately 16 consecutive months while enrolled in 8 prescribed courses and one Project/Internship (2 course credit). Courses include not only Computer Science but also Business classes.</p>
+        <p>Information on admission requirements and the application process can be found at: <a href="http://www.uwindsor.ca/professional/405/master-applied-computing">MAC</a></p>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="sidebar-module">
+        <img src="{% static 'myapps/logo.gif' %}">
+    </div>
+    </div>
+
+</div>
+{% endblock %}

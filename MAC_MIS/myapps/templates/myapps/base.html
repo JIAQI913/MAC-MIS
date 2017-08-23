@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'myapps/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'myapps/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'myapps/bootstrap.min.css' %}">
+        <script type="text/javascript" src="{% static 'myapps/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% block head_block %}
+
+        {% endblock %}
+        <title>MAC - MIS   {% block title %}Welcome!{% endblock %}</title>
+    </head>
+
+    <body>
+        <div>
+            <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="{% url 'myapps:index' %}">MAC</a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="{% url 'myapps:index' %}">Home</a></li>
+                  <li><a href="{% url 'myapps:update' %}">Information</a></li>
+                  <li><a href="{% url 'myapps:project' %}">Project</a></li>
+                  <li><a href="{% url 'myapps:job' %}">Job</a></li>
+                  <li><a href="{% url 'myapps:resetpassword' %}">Reset Password</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if request.user.is_authenticated %}
+                        <li><a><span class="glyphicon glyphicon-user"></span> {{ request.user.first_name }}</a></li>
+                        <li><a href="{% url 'myapps:logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'myapps:login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% endif %}
+                </ul>
+              </div>
+            </nav>
+        </div>
+        <div>
+            {% block myhdg %}
+
+            {% endblock %}
+            {% block body_block %}*** {% endblock %}
+        </div>
+
+        <nev class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+            <ul class="list-inline">
+                <li class="hbar1"><a href = "{% url 'myapps:index' %}">Click here to return to main page</a></li>
+
+            </ul>
+        </nev>
+    </body>
+</html>
